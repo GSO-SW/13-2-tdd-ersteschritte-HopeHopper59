@@ -76,7 +76,7 @@ namespace _13._3_tdd_GeometrieTests // Namenskonvention: <zuTestendesProjekt>Tes
             r.Hoehe = -1;
         }
 
-        [TestMethod] 
+        [TestMethod]
         public void Umfang_WirdBerechnet()
         {
             // Arrange
@@ -115,10 +115,24 @@ namespace _13._3_tdd_GeometrieTests // Namenskonvention: <zuTestendesProjekt>Tes
 
             // Act
             Rechteck r = new Rechteck(breite, hoehe);
-            
+
             // Assert
             Assert.AreEqual(breite, r.Breite);
             Assert.AreEqual(hoehe, r.Hoehe);
+        }
+
+        [TestMethod]
+        public void RechtechGroesserAlsDasZweiter() 
+        {
+            // Arrange
+            Rechteck r = new Rechteck(10, 20);
+
+            // Act
+            bool ergebnis = r.GroeserAls(10, 10);
+
+            // Assert
+            Assert.AreEqual(true, ergebnis);
+
         }
     }
 }
